@@ -1,0 +1,849 @@
+.wrapper{
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   background-color: gray;
+}
+
+.header{
+   position: fixed;
+   width: 100%;
+   padding: 25px;
+   z-index: 100;
+   background-color: transparent;
+}
+
+.header::before{
+   content: "";
+   position: absolute;
+   width: 50%;
+   height: 100%;
+   top: 0;
+   left: -50%;
+
+    opacity: 1;
+
+}
+
+.header::after{
+   content: "";
+   position: absolute;
+   width: 50%;
+   height: 100%;
+   top: 0;
+   left: -100%;
+}
+
+.header:hover::before{
+   opacity: 1;
+   transition: all 2.3s;
+   background-color: black;
+   left: 0;
+}
+
+.header:hover::after{
+   opacity: 1;
+   background-color: #ccc;
+   transition: all 2.5s;
+   left: 50%;
+}
+
+.header__text{
+   margin: 0 auto;
+   width: 80%;
+   position: relative;
+   display: flex;
+   justify-content: start;
+
+   align-items: center;
+}
+
+.header__text-left{
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 4%;
+   position: relative;
+   min-height: 18px;
+}
+
+.header__text-right{
+   width: 50%;
+   display: flex;
+   justify-content: start;
+   padding-left: 10px;
+   font-size: 16px;
+   font-weight: 700;
+   min-height: 18px;
+   z-index: 5;
+}
+
+
+.header__text-left span:nth-child(1){
+   position: absolute;
+   top: 0;
+   left: -100%;
+   z-index: 5;
+}
+
+.header:hover .header__text-left span:nth-child(1){
+   position: absolute;
+   top: 0;
+   left: 45%;
+   z-index: 5;
+   transition: all 3s;
+}
+
+.header__text-left span:nth-child(2){
+   position: absolute;
+   top: -550%;
+   left: 55%;
+   z-index: 5;
+}
+
+.header:hover .header__text-left span:nth-child(2){
+   position: absolute;
+   top: 0;
+   left: 55%;
+   z-index: 5;
+   transition: all 3s;
+}
+
+.header__text-left span:nth-child(3){
+   position: absolute;
+   top: 0;
+   left: 65%;
+   z-index: 5;
+   opacity: 0;
+   transform: rotate(135deg);
+}
+
+.header:hover .header__text-left span:nth-child(3){
+   transform: rotate(0deg);
+   transition: all 3s;
+   opacity: 1;
+}
+
+.header__text-left span:nth-child(4){
+   position: absolute;
+   top: 0;
+   left: 75%;
+   z-index: 5;
+   transform: rotate(-135deg);
+   opacity: 0;
+}
+
+.header:hover .header__text-left span:nth-child(4){
+   transform: rotate(0deg);
+   transition: all 3s;
+   opacity: 1;
+}
+
+.header__text-left span:nth-child(5){
+   position: absolute;
+   top: 0;
+   left: 85%;
+   z-index: 5;
+   display: block;
+   transform: translate(0px, 60px);
+   opacity: 0;
+}
+
+.header:hover .header__text-left span:nth-child(5){
+   opacity: 1;
+   transform: translate(0px, 0px);
+   transition: all 3s;
+}
+
+.header__text-left span:nth-child(6){
+   position: absolute;
+   top: 0;
+   right: -90%;
+   z-index: 5;
+   opacity: 0;
+}
+
+.header:hover .header__text-left span:nth-child(6){
+   position: absolute;
+   top: 0;
+   right: 2%;
+   z-index: 5;
+   transition: all 3s ease;
+   opacity: 1;
+}
+
+.header__text-right span{
+   visibility: hidden;
+   opacity: 0;
+}
+
+.header:hover .header__text-right span{
+   visibility: visible;
+   opacity: 1;
+   transition: all 3s 2.5s;
+}
+
+/* ==================================================== */
+
+.page {
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+}
+
+.road{
+   width: 100%;
+   height: 100vh;
+   position: relative;
+   top: 0;
+   left: 0;
+}
+
+.road::before{
+   content: "";
+   display: block;
+   width: 100%;
+   height: 30vh;
+   background-color: black;
+   position: absolute;
+   top: 40%;
+}
+
+.road::after{
+   content: "";
+   display: block;
+   width: 140%;
+   height: 30vh;
+   bottom: 0;
+   left: -30%;
+   background-color: black;
+   position: absolute;
+   transform: rotate(-45deg);
+}
+
+.cars{
+   width: 100%;
+   overflow: hidden;
+}
+
+.car:nth-child(1){
+   position: absolute;
+   top: 40%;
+   right: 1%;
+  animation-name: car-one; 
+
+  animation-duration:6s;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes car-one{
+   0%{
+      right: 1%;
+   }
+   20%{
+      right: 21%;
+   }
+   75%{
+      right: 21%;
+   }
+   100%{
+      right: 92%;
+   }
+}
+
+.car:nth-child(2){
+   position: absolute;
+   top: 60%;
+  left: 1%;
+  animation-name: car-two; 
+  animation-duration: 6s;
+  z-index: 4;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+ @keyframes car-two{
+   0%{
+    left: 1%;
+   }
+   15%{
+      left: 32%;
+   }
+   75%{
+      left: 32%;
+   }
+   100%{
+   left: 92%;
+   }
+   
+}  
+
+.car:nth-child(3){
+   position: absolute;
+   bottom: 2%;
+   left: 38%;
+   transform: rotate(-48deg);
+  animation-name: car-tree; 
+  z-index: 4;
+
+  animation-duration:6s;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+ @keyframes car-tree{
+   0%{
+      bottom: 2%;
+      left: 38%;
+   }
+   20%{
+      bottom: 23%;
+      left: 50%;
+   }
+   50%{
+      bottom: 23%;
+      left: 50%;
+   }
+   100%{
+      bottom: 90%;
+      left: 84%;
+   }
+} 
+
+.car:nth-child(4){
+   position: absolute;
+   top: 45%;
+   right: 1%;
+  animation-name: car-four; 
+  z-index: 5;
+
+  animation-duration:6s;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes car-four{
+   0%{
+      right: 1%;
+   }
+   40%{
+      right: 10%;
+   }
+   78%{
+      right: 10%;
+   }
+   100%{
+      right: 92%;
+   }
+}
+
+.car:nth-child(5){
+   position: absolute;
+   top: 58%;
+  left: 1%;
+  animation-name: car-five; 
+  animation-duration: 6s;
+  z-index: 3;
+  animation-timing-function: ease-in;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+ @keyframes car-five{
+   0%{
+    left: 1%;
+   }
+   15%{
+      left: 29%;
+   }
+   75%{
+      left: 29%;
+   }
+   100%{
+   left: 91%;
+   }
+   
+} 
+
+.car:nth-child(6){
+   position: absolute;
+   top: 62%;
+  left: 1%;
+  animation-name: car-six; 
+  animation-duration: 6s;
+  z-index: 3;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+ @keyframes car-six{
+   0%{
+    left: 1%;
+   }
+   15%{
+      left: 24%;
+   }
+   75%{
+      left: 24%;
+   }
+   100%{
+   left: 90%;
+   }
+   
+} 
+
+.car:nth-child(7){
+   position: absolute;
+   top: 60%;
+  left: 1%;
+  animation-name: car-seven; 
+  animation-duration: 6s;
+  z-index: 2;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+ @keyframes car-seven{
+   0%{
+    left: 1%;
+   }
+   35%{
+      left: 10%;
+   }
+   45%{
+      left: 13%;
+   }
+   75%{
+      left: 18%;
+   }
+   100%{
+   left: 94%;
+   }
+   
+} 
+
+
+/* =============================================================== */
+
+.light:nth-child(1){
+   position: absolute;
+   top: 50%;
+   left: 58%;
+   z-index: 5;
+}
+
+.light:nth-child(1):before{
+   content: "";
+   position: absolute;
+   display: block;
+   top: 16%;
+   left: 38.2%;
+   opacity: 0.5;
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   background-color: red;
+   z-index: 5;
+
+   animation: red-light 4s 4s ease normal forwards infinite;
+}
+
+@keyframes red-light{
+   0%{
+      opacity: 1;
+   }
+   5%{
+      opacity: 0.6;
+   }
+   10%{
+      opacity: 1;
+   }
+   15%{
+      opacity: 0.6;
+   }
+   20%{
+      opacity: 1;
+   }
+   30%{
+      opacity: 0.6;
+   }
+   100%{
+      opacity: 1;
+   }
+}
+
+.light:nth-child(2){
+   position: absolute;
+   top: 54.5%;
+   left: 59.55%;
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   background-color: green;
+   z-index: 5;
+   animation: green-light 4s 6s ease normal forwards infinite;
+}
+
+@keyframes green-light{
+   0%{
+      opacity: 1;
+   }
+   10%{
+      opacity: 0.6;
+   }
+   20%{
+      opacity: 1;
+   }
+   30%{
+      opacity: 0.6;
+   }
+   40%{
+      opacity: 1;
+   }
+   50%{
+      opacity: 0.6;
+   }
+   100%{
+      opacity: 1;
+   }
+}
+
+.light:nth-child(1):after{
+   content: "";
+   position: absolute;
+   display: block;
+   bottom: -90px;
+   left: 41%;
+   opacity: 1;
+   width: 8px;
+   height: 95px;
+   background-color: #ccc;
+   z-index: 5;
+}
+
+.light:nth-child(3){
+   position: absolute;
+   top: 20%;
+   left: 48%;
+}
+
+.light:nth-child(3):before{
+   content: "";
+   position: absolute;
+   display: block;
+   bottom: -90px;
+   left: 41%;
+   opacity: 1;
+   width: 8px;
+   height: 95px;
+   background-color: #ccc;
+   z-index: 5;
+}
+
+.light:nth-child(4){
+   position: absolute;
+   top: 50%;
+   left: 32%;
+}
+
+.light:nth-child(4):before{
+   content: "";
+   position: absolute;
+   display: block;
+   bottom: -90px;
+   left: 41%;
+   opacity: 1;
+   width: 8px;
+   height: 95px;
+   background-color: #ccc;
+   z-index: 5;
+}
+
+.light:nth-child(5){
+   position: absolute;
+   top: 20%;
+   left: 74%;
+}
+
+.light:nth-child(4){
+   transform: rotateY(120deg);
+   z-index: 5;
+}
+
+.light:nth-child(3){
+   transform: rotateY(40deg);
+   z-index: 5;
+}
+
+.light:nth-child(5){
+   transform: rotateY(60deg);
+   z-index: 5;
+}
+
+.light:nth-child(5):before{
+   content: "";
+   position: absolute;
+   display: block;
+   bottom: -90px;
+   left: 41%;
+   opacity: 1;
+   width: 8px;
+   height: 95px;
+   background-color: #ccc;
+   z-index: 5;
+}
+
+/* ==================================================== */
+.bus-stop{
+position: absolute;
+top: 24%;
+left: 16%;
+width: 150px;
+}
+
+.bus-stop img{
+   width: 100%;
+}
+
+/* ====================================================== */
+
+.mall{
+   position: absolute;
+   top: 10%;
+   left: 34%;
+   width: 100px;
+   z-index: 3;
+}
+
+.mall img{
+   width: 100%;
+}
+
+/* ====================================================== */
+
+.plane{
+   position: absolute;
+   top: 20%;
+   left: 1%;
+   width: 100px;
+   z-index: 10;
+
+   animation: plane 10s ease-in infinite normal ;
+}
+
+@keyframes plane {
+   0%{
+      top: 20%;
+   left: 2%;
+   }
+  
+   100%{
+      top: 5%;
+   left: 92%;
+   opacity: 1;
+   }
+}
+
+/* ====================================================== */
+
+.tree img:nth-child(1){
+position: absolute;
+top: 12%;
+left: 74%;
+width: 200px;
+z-index: 4;
+}
+
+.tree img:nth-child(2){
+   position: absolute;
+   top: 56%;
+   left: 5%;
+   width: 120px;
+   z-index: 4;
+ }
+
+.tree img{
+   width: 100%;
+}
+
+/* ========================================================== */
+
+.fence img:nth-child(1){
+   position: absolute;
+   top: 63%;
+   left: 0;
+   z-index: 3;
+}
+
+.fence img:nth-child(2){
+   position: absolute;
+   top: 63%;
+   left: 4%;
+   z-index: 3;
+}
+
+.fence img:nth-child(3){
+   position: absolute;
+   top: 63%;
+   left: 8%;
+   z-index: 3;
+}
+
+.fence img:nth-child(4){
+   position: absolute;
+   top: 63%;
+   left: 12%;
+   z-index: 3;
+}
+
+.fence img:nth-child(5){
+   position: absolute;
+   top: 63%;
+   left: 16%;
+   z-index: 3;
+}
+
+.fence img:nth-child(6){
+   position: absolute;
+   top: 63%;
+   left: 20%;
+   z-index: 3;
+}
+
+.fence img:nth-child(7){
+   position: absolute;
+   top: 63%;
+   left: 24%;
+   z-index: 3;
+}
+
+.fence img:nth-child(8){
+   position: absolute;
+   top: 63%;
+   left: 28%;
+   z-index: 3;
+}
+
+.fence img:nth-child(9){
+   position: absolute;
+   top: 63%;
+   left: 32%;
+   z-index: 3;
+}
+
+.fence img:nth-child(10){
+   position: absolute;
+   top: 67%;
+   left: 32.6%;
+   z-index: 3;
+  
+   transform: skew(5deg,-45deg);
+}
+
+.fence img:nth-child(11){
+   position: absolute;
+   top: 75%;
+   left: 28.6%;
+   z-index: 3;
+  
+   transform: skew(5deg,-45deg);
+}
+
+.fence img:nth-child(12){
+   position: absolute;
+   top: 83%;
+   left: 24.6%;
+   z-index: 3;
+  
+   transform: skew(5deg,-45deg);
+}
+
+.fence img:nth-child(13){
+   position: absolute;
+   top: 86%;
+   left: 23%;
+   z-index: 3;
+  
+   transform: skew(5deg,-45deg);
+}
+
+/* ====================================================== */
+
+.bush img:nth-child(1){
+   position: absolute;
+   top: 30.5%;
+   left: 72%;
+   width: 100px;
+   z-index: 5; 
+}
+
+.bush img:nth-child(2){
+   position: absolute;
+   top: 32.5%;
+   left: 75%;
+   width: 80px;
+   z-index: 5; 
+}
+
+.bush img:nth-child(3){
+   position: absolute;
+   top: 30.5%;
+   left: 77%;
+   width: 100px;
+   z-index: 5; 
+}
+
+.bush img:nth-child(4){
+   position: absolute;
+   top: 32.5%;
+   left: 81%;
+   width: 80px;
+   z-index: 5; 
+}
+
+.bush img:nth-child(5){
+   position: absolute;
+   top: 28.8%;
+   left: 84%;
+   width: 120px;
+   z-index: 5; 
+}
+
+.bush img:nth-child(6){
+   position: absolute;
+   top: 28.8%;
+   left: 88%;
+   width: 120px;
+   z-index: 5; 
+}
+
+.bush img:nth-child(7){
+   position: absolute;
+   top: 30.8%;
+   left: 92%;
+   width: 100px;
+   z-index: 3; 
+}
+
+.bush img:nth-child(8){
+   position: absolute;
+   top: 28.8%;
+   left: 92.2%;
+   width: 120px;
+   z-index: 2; 
+}
+
+.bush img{
+   width: 100%;
+}
+
+/* ====================================================== */
+
